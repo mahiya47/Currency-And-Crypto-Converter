@@ -7,133 +7,132 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
+    <main class="container">
       <div class="left">
-        <div class="sections">
-          <div class="currency-converter-container">
-            <h3>Choose Currencies:</h3>
-            <div class="currency-converter-container-section">
-              <div class="dropdown-group">
-                <label for="from-currency">From:</label>
-                <select name="from_currency" id="from-currency">
-                  <optgroup label="Popular Fiat Currencies">
-                    <option value="" disabled selected hidden>
-                      Choose currency...
-                    </option>
-                    <option value="USD">USD - United States Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="INR">INR - Indian Rupee</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                  </optgroup>
+        <div class="header-rate">
+          <p>1 <span class="from-currency-choosen">USD</span> equals</p>
+          <h2 class="to-currency-choosen">0.00</h2>
+        </div>
 
-                  <optgroup label="Other Global Currencies">
-                    <option value="AED">
-                      AED - United Arab Emirates Dirham
-                    </option>
-                    <option value="ARS">ARS - Argentine Peso</option>
-                    <option value="BRL">BRL - Brazilian Real</option>
-                    <option value="HKD">HKD - Hong Kong Dollar</option>
-                    <option value="IDR">IDR - Indonesian Rupiah</option>
-                    <option value="KRW">KRW - South Korean Won</option>
-                    <option value="MXN">MXN - Mexican Peso</option>
-                    <option value="NZD">NZD - New Zealand Dollar</option>
-                    <option value="RUB">RUB - Russian Ruble</option>
-                    <option value="SAR">SAR - Saudi Riyal</option>
-                    <option value="TRY">TRY - Turkish Lira</option>
-                    <option value="ZAR">ZAR - South African Rand</option>
-                  </optgroup>
+        <div class="converter-area">
+          <div class="input-group">
+            <input type="number" id="amount-input" value="1" min="0" />
+            <select name="from_currency" id="from-currency">
+              <optgroup label="Popular Fiat Currencies">
+                <option value="USD" selected>USD - United States Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+                <option value="SGD">SGD - Singapore Dollar</option>
+              </optgroup>
+              <optgroup label="Other Global Currencies">
+                <option value="AED">AED - UAE Dirham</option>
+                <option value="ARS">ARS - Argentine Peso</option>
+                <option value="BRL">BRL - Brazilian Real</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="IDR">IDR - Indonesian Rupiah</option>
+                <option value="KRW">KRW - South Korean Won</option>
+                <option value="MXN">MXN - Mexican Peso</option>
+                <option value="NZD">NZD - New Zealand Dollar</option>
+                <option value="RUB">RUB - Russian Ruble</option>
+                <option value="SAR">SAR - Saudi Riyal</option>
+                <option value="TRY">TRY - Turkish Lira</option>
+                <option value="ZAR">ZAR - South African Rand</option>
+              </optgroup>
+              <optgroup label="Major Cryptocurrencies">
+                <option value="BTC">BTC - Bitcoin</option>
+                <option value="ETH">ETH - Ethereum</option>
+                <option value="USDT">USDT - Tether</option>
+                <option value="BNB">BNB - Binance Coin</option>
+                <option value="SOL">SOL - Solana</option>
+                <option value="USDC">USDC - USD Coin</option>
+                <option value="XRP">XRP - Ripple</option>
+                <option value="ADA">ADA - Cardano</option>
+                <option value="DOGE">DOGE - Dogecoin</option>
+                <option value="AVAX">AVAX - Avalanche</option>
+                <option value="DOT">DOT - Polkadot</option>
+                <option value="MATIC">MATIC - Polygon</option>
+              </optgroup>
+            </select>
+          </div>
 
-                  <optgroup label="Major Cryptocurrencies">
-                    <option value="BTC">BTC - Bitcoin</option>
-                    <option value="ETH">ETH - Ethereum</option>
-                    <option value="USDT">USDT - Tether</option>
-                    <option value="BNB">BNB - Binance Coin</option>
-                    <option value="SOL">SOL - Solana</option>
-                    <option value="USDC">USDC - USD Coin</option>
-                    <option value="XRP">XRP - Ripple</option>
-                    <option value="ADA">ADA - Cardano</option>
-                    <option value="DOGE">DOGE - Dogecoin</option>
-                    <option value="AVAX">AVAX - Avalanche</option>
-                    <option value="DOT">DOT - Polkadot</option>
-                    <option value="MATIC">MATIC - Polygon</option>
-                  </optgroup>
-                </select>
-              </div>
-
-              <div class="dropdown-group">
-                <label for="to-currency">To:</label>
-                <select name="to_currency" id="to-currency">
-                  <optgroup label="Popular Fiat Currencies">
-                    <option value="" disabled selected hidden>
-                      Choose currency...
-                    </option>
-                    <option value="USD">USD - United States Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="INR">INR - Indian Rupee</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                  </optgroup>
-
-                  <optgroup label="Other Global Currencies">
-                    <option value="AED">
-                      AED - United Arab Emirates Dirham
-                    </option>
-                    <option value="ARS">ARS - Argentine Peso</option>
-                    <option value="BRL">BRL - Brazilian Real</option>
-                    <option value="HKD">HKD - Hong Kong Dollar</option>
-                    <option value="IDR">IDR - Indonesian Rupiah</option>
-                    <option value="KRW">KRW - South Korean Won</option>
-                    <option value="MXN">MXN - Mexican Peso</option>
-                    <option value="NZD">NZD - New Zealand Dollar</option>
-                    <option value="RUB">RUB - Russian Ruble</option>
-                    <option value="SAR">SAR - Saudi Riyal</option>
-                    <option value="TRY">TRY - Turkish Lira</option>
-                    <option value="ZAR">ZAR - South African Rand</option>
-                  </optgroup>
-
-                  <optgroup label="Major Cryptocurrencies">
-                    <option value="BTC">BTC - Bitcoin</option>
-                    <option value="ETH">ETH - Ethereum</option>
-                    <option value="USDT">USDT - Tether</option>
-                    <option value="BNB">BNB - Binance Coin</option>
-                    <option value="SOL">SOL - Solana</option>
-                    <option value="USDC">USDC - USD Coin</option>
-                    <option value="XRP">XRP - Ripple</option>
-                    <option value="ADA">ADA - Cardano</option>
-                    <option value="DOGE">DOGE - Dogecoin</option>
-                    <option value="AVAX">AVAX - Avalanche</option>
-                    <option value="DOT">DOT - Polkadot</option>
-                    <option value="MATIC">MATIC - Polygon</option>
-                  </optgroup>
-                </select>
-              </div>
-            </div>
+          <div class="input-group">
+            <input type="text" id="amount-output" value="0.00" readonly />
+            <select name="to_currency" id="to-currency">
+              <optgroup label="Popular Fiat Currencies">
+                <option value="USD">USD - United States Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="INR" selected>INR - Indian Rupee</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+                <option value="SGD">SGD - Singapore Dollar</option>
+              </optgroup>
+              <optgroup label="Other Global Currencies">
+                <option value="AED">AED - UAE Dirham</option>
+                <option value="ARS">ARS - Argentine Peso</option>
+                <option value="BRL">BRL - Brazilian Real</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="IDR">IDR - Indonesian Rupiah</option>
+                <option value="KRW">KRW - South Korean Won</option>
+                <option value="MXN">MXN - Mexican Peso</option>
+                <option value="NZD">NZD - New Zealand Dollar</option>
+                <option value="RUB">RUB - Russian Ruble</option>
+                <option value="SAR">SAR - Saudi Riyal</option>
+                <option value="TRY">TRY - Turkish Lira</option>
+                <option value="ZAR">ZAR - South African Rand</option>
+              </optgroup>
+              <optgroup label="Major Cryptocurrencies">
+                <option value="BTC">BTC - Bitcoin</option>
+                <option value="ETH">ETH - Ethereum</option>
+                <option value="USDT">USDT - Tether</option>
+                <option value="BNB">BNB - Binance Coin</option>
+                <option value="SOL">SOL - Solana</option>
+                <option value="USDC">USDC - USD Coin</option>
+                <option value="XRP">XRP - Ripple</option>
+                <option value="ADA">ADA - Cardano</option>
+                <option value="DOGE">DOGE - Dogecoin</option>
+                <option value="AVAX">AVAX - Avalanche</option>
+                <option value="DOT">DOT - Polkadot</option>
+                <option value="MATIC">MATIC - Polygon</option>
+              </optgroup>
+            </select>
           </div>
         </div>
-        <div class="sections">
-          <div class="current-rates">
-            <p>
-              Current value of 1
-              <span class="from-currency-choosen">..... </span>
-              is equal to:
-              <span class="to-currency-choosen">.....</span>
-            </p>
-          </div>
-        </div>
-        <div class="sections"></div>
+        <button id="convert-btn">Convert</button>
       </div>
-      <div class="right"></div>
+
+      <div class="right">
+        <div class="market-card">
+          <h3>Major Fiat Rates</h3>
+          <ul class="market-list" id="fiat-rates-list">
+            <li><span>USD</span> <span>--</span></li>
+            <li><span>EUR</span> <span>--</span></li>
+            <li><span>GBP</span> <span>--</span></li>
+            <li><span>JPY</span> <span>--</span></li>
+            <li><span>AUD</span> <span>--</span></li>
+          </ul>
+        </div>
+
+        <div class="market-card">
+          <h3>Major Crypto Rates</h3>
+          <ul class="market-list" id="crypto-rates-list">
+            <li><span>BTC</span> <span>--</span></li>
+            <li><span>ETH</span> <span>--</span></li>
+            <li><span>SOL</span> <span>--</span></li>
+            <li><span>BNB</span> <span>--</span></li>
+            <li><span>XRP</span> <span>--</span></li>
+          </ul>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
